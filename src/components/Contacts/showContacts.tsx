@@ -24,7 +24,7 @@ const ShowContacts = () => {
         return <span>Loading...</span>;
       }
     
-    console.log(data);
+  
     
       
     return (

@@ -9,7 +9,9 @@ import {
 import Main from './layout/Main';
 import Contacts from './components/Contacts/Contacts';
 import CreateContact from './components/CreateContact/CreateContact';
-
+import EditContact from './components/Contacts/EditContact/EditContact';
+import { QueryClient, QueryClientProvider } from "react-query";
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path:'create-contact',
         element: <CreateContact></CreateContact>
+      },
+      {
+        path:'/edit-contact/:id',
+        element:<EditContact></EditContact>
       }
     ]
   },
@@ -35,7 +41,10 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
     <RouterProvider router={router} />
+    </QueryClientProvider>
+    
   </React.StrictMode>
 );
 
