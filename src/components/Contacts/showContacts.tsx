@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+import DeleteContact from './DeleteContact';
 
 interface ContactData {
-    _id: number;
+    _id: string;
     fName: string;
     lName: string;
     status: string;
@@ -37,7 +38,9 @@ const ShowContacts = () => {
                <p className='text-xl '> <span className='font-semibold'>Status:</span>  {item.status}</p>
                <Link className='btn btn-secondary my-2' to={`/edit-contact/${item._id}`}>Edit</Link>
                <br />
-               <Link className='btn btn-warning' to='/'>Delete</Link>
+
+               <DeleteContact id={item._id}></DeleteContact>
+               
                
                
                 </div> )
