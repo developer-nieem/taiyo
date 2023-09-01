@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
 const DeleteContact = (props : {id: String}) => {
- 
 
 
   const  deleteHandler = async() => {
+    
     
     const response = await fetch(`http://localhost:3001/contact/${props.id}`, {
         method: 'DELETE',
@@ -13,6 +13,8 @@ const DeleteContact = (props : {id: String}) => {
 
       if (!response.ok) {
         throw new Error('Error deleting contact');
+      }else{
+        window.location.reload();
       }
   }
 
