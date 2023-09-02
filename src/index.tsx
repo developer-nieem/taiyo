@@ -11,7 +11,6 @@ import Contacts from './components/Contacts/Contacts';
 import CreateContact from './components/CreateContact/CreateContact';
 import EditContact from './components/Contacts/EditContact/EditContact';
 import { QueryClient, QueryClientProvider } from "react-query";
-import Charts from './components/ChartsAndMaps/ChartsAndMaps';
 import ChartsAndMaps from './components/ChartsAndMaps/ChartsAndMaps';
 const queryClient = new QueryClient();
 
