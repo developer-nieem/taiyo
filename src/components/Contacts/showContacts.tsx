@@ -11,7 +11,7 @@ interface ContactData {
   }
 const ShowContacts = () => {
     
-    const { isLoading, data } = useQuery<ContactData[]>('contact', async () => {
+    const { isLoading, data, isError } = useQuery<ContactData[]>('contact', async () => {
         const response = await fetch('https://taiyo-server-developer-nieem.vercel.app/contact');
     
         if (!response.ok) {
@@ -25,8 +25,12 @@ const ShowContacts = () => {
         return <span>Loading...</span>;
       }
     
-  
-    
+      console.log(data);
+      
+      if (isError || !Array.isArray(data)) {
+        return <div>Loading Data ..............</div>;
+      }
+
       
     return (
         <div className='grid md:grid-cols-2 my-7'>
