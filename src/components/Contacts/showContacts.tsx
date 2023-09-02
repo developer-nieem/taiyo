@@ -12,7 +12,7 @@ interface ContactData {
 const ShowContacts = () => {
     
     const { isLoading, data } = useQuery<ContactData[]>('contact', async () => {
-        const response = await fetch('http://localhost:3001/contact');
+        const response = await fetch('https://taiyo-server-developer-nieem.vercel.app/contact');
     
         if (!response.ok) {
           throw new Error('Network response was not ok');

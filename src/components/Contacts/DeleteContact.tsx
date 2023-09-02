@@ -7,7 +7,7 @@ const DeleteContact = (props : {id: String}) => {
   const  deleteHandler = async() => {
     
     
-    const response = await fetch(`http://localhost:3001/contact/${props.id}`, {
+    const response = await fetch(`https://taiyo-server-developer-nieem.vercel.app/contact/${props.id}`, {
         method: 'DELETE',
       });
 

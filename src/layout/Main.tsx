@@ -15,7 +15,7 @@ const Main = () => {
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content text-xl">
       {/* Sidebar content here */}
       <li> <Link to='/'>Contact</Link> </li>
-      <li><Link to='/'>Charts and Maps</Link></li>
+      <li><Link to='/charts-maps'>Charts and Maps</Link></li>
     </ul>
   
   </div>

@@ -19,7 +19,7 @@ const CreateContact = () => {
       };
   
       try {
-        const response = await fetch('http://localhost:3001/contact', {
+        const response = await fetch('https://taiyo-server-developer-nieem.vercel.app/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

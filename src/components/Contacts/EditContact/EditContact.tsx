@@ -19,7 +19,7 @@ const EditContact = () => {
 
     // data fetch
     const {  data } = useQuery<ContactData[]>('contact', async () => {
-        const response = await fetch('http://localhost:3001/contact');
+        const response = await fetch('https://taiyo-server-developer-nieem.vercel.app/contact');
     
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -46,7 +46,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
         status: form.active.value,
       };
 
-      const response = await fetch(`http://localhost:3001/contact/${id}`, {
+      const response = await fetch(`https://taiyo-server-developer-nieem.vercel.app/contact/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
