@@ -11,7 +11,7 @@ interface ContactData {
   }
 const ShowContacts = () => {
     
-    const { isLoading, data, isError } = useQuery<ContactData[]>('contact', async () => {
+    const { isLoading, data, isError , refetch } = useQuery<ContactData[]>('contact', async () => {
         const response = await fetch('https://taiyo-server-developer-nieem.vercel.app/contact');
     
         if (!response.ok) {
@@ -31,6 +31,7 @@ const ShowContacts = () => {
         return <div>Loading Data ..............</div>;
       }
 
+     
       
     return (
         <div className='grid md:grid-cols-2 my-7'>
@@ -43,7 +44,7 @@ const ShowContacts = () => {
                <Link className='btn btn-secondary my-2' to={`/edit-contact/${item._id}`}>Edit</Link>
                <br />
 
-               <DeleteContact id={item._id}></DeleteContact>
+               <DeleteContact id={item._id} hello={refetch}></DeleteContact>
                
                
                

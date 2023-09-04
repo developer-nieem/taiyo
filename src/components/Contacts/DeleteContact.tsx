@@ -1,20 +1,25 @@
 import React from 'react';
 
 
-const DeleteContact = (props : {id: String}) => {
+type DeleteContactProps = {
+  id: string;
+  hello: () =>void; // Adjust the type to match refetch
+};
+const DeleteContact = ({ id, hello }: DeleteContactProps) => {
 
 
   const  deleteHandler = async() => {
     
     
-    const response = await fetch(`https://taiyo-server-developer-nieem.vercel.app/contact/${props.id}`, {
+    const response = await fetch(`https://taiyo-server-developer-nieem.vercel.app/contact/${id}`, {
         method: 'DELETE',
       });
 
       if (!response.ok) {
         throw new Error('Error deleting contact');
       }else{
-        window.location.reload();
+        // window.location.reload();
+       await hello()
       }
   }
 
